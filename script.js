@@ -13,7 +13,7 @@ function checkPasskey() {
     const petals = document.querySelectorAll(".petal");
 
     // Show the flower container and apply the bloom animation to flower and petals
-    flowerContainer.style.opacity = 1; // Make the flower visible
+    flowerContainer.style.opacity = 1; // Make the flower container visible
     flower.classList.add("bloom-flower");
 
     petals.forEach(petal => {
@@ -22,7 +22,7 @@ function checkPasskey() {
 
     // Optional: Disable the input and button once the correct passkey is entered
     document.getElementById('passkey').disabled = true;
-    document.querySelector("button").disabled = true;
+    document.getElementById('submitBtn').disabled = true; // Disable submit button
   } else {
     // Optionally, alert the user if the passkey is incorrect
     alert("Incorrect passkey! Please try again.");

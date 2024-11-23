@@ -29,7 +29,7 @@ body {
 .flower-container {
   margin-top: 20px;
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
   transition: opacity 1s ease;
 }
 
@@ -41,7 +41,7 @@ body {
   margin: 0 auto;
   border-radius: 50%;
   background-color: pink;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
   transition: opacity 1s ease;
 }
 
@@ -52,7 +52,7 @@ body {
   height: 0;
   background-color: pink;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
   transition: all 1.5s ease;
 }
 
@@ -125,6 +125,8 @@ body {
 .bloom-petal {
   animation: bloom 2s forwards;
   opacity: 1;
+  width: 30px; /* Adjust petal size */
+  height: 30px; /* Adjust petal size */
 }
 
 /* Styling for the input and button */
