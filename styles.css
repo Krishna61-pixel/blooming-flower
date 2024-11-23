@@ -1,59 +1,112 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the content */
 body {
-  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
+
+/* Container for the passkey input and flower */
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+/* Flower container visibility */
 .flower-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease;
 }
 
-.flower {
+
+/* Flower styling */ 
+ .flower {
   position: relative;
   width: 100px;
   height: 100px;
-  transform: rotate(45deg);
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: pink;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease;
 }
 
+/* Petals styling */
 .petal {
   position: absolute;
-  width: 50px;
-  height: 100px;
+  width: 0;
+  height: 0;
   background-color: pink;
   border-radius: 50%;
-  opacity: 0;
-  animation: bloom 2s forwards;
+  opacity: 0; /* Initially hidden */
+  transition: all 1.5s ease;
 }
 
-.petal1 {
+.petal:nth-child(1) {
   top: 0;
   left: 50%;
-  transform: translateX(-50%) rotate(0deg);
+  transform: translateX(-50%) rotate(45deg);
 }
 
-.petal2 {
+.petal:nth-child(2) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(135deg);
+}
+
+.petal:nth-child(3) {
   top: 50%;
   left: 0;
-  transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(225deg);
 }
 
-.petal3 {
+.petal:nth-child(4) {
   top: 50%;
-  right: 0;
+  left: 100%;
+  transform: translateY(-50%) rotate(315deg);
+}
+
+.petal:nth-child(5) {
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.petal:nth-child(6) {
+  top: 50%;
+  left: 50%;
   transform: translateY(-50%) rotate(180deg);
 }
 
-.petal4 {
-  bottom: 0;
+.petal:nth-child(7) {
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) rotate(270deg);
+  transform: translateY(-50%) rotate(270deg);
 }
 
+.petal:nth-child(8) {
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotate(360deg);
+}
+
+/* Blooming effect for flower and petals */
 @keyframes bloom {
   0% {
     transform: scale(0);
@@ -63,4 +116,40 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.bloom-flower {
+  animation: bloom 2s forwards;
+}
+
+.bloom-petal {
+  animation: bloom 2s forwards;
+  opacity: 1;
+  width: 30px; /* Adjust petal size */
+  height: 30px; /* Adjust petal size */
+}
+
+/* Styling for the input and button */
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
 }

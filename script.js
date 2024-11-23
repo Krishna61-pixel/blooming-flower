@@ -7,17 +7,27 @@ function checkPasskey() {
 
   // Check if the passkey matches
   if (userPasskey === correctPasskey) {
-// Get the button and flower container elements
-const bloomButton = document.getElementById("bloomBtn");
-const flower = document.querySelector(".flower");
+    // Get the flower container and petals
+    const flowerContainer = document.getElementById("flower-container");
+    const flower = document.getElementById("flower");
+    const petals = document.querySelectorAll(".petal");
 
-// Function to trigger the blooming effect
-function bloomFlower() {
-  // Add the class 'bloom' to the flower to trigger CSS animation
-  flower.classList.add("bloom");
-}
+    // Show the flower container and apply the bloom animation to flower and petals
+    flowerContainer.style.opacity = 1; // Make the flower container visible
+    flower.classList.add("bloom-flower");
 
-// Event listener to trigger the blooming on button click
-bloomButton.addEventListener("click", bloomFlower);
+    petals.forEach(petal => {
+      petal.classList.add("bloom-petal"); // Make each petal bloom
+    });
+
+    // Optional: Disable the input and button once the correct passkey is entered
+    document.getElementById('passkey').disabled = true;
+    document.getElementById('submitBtn').disabled = true; // Disable submit button
+  } else {
+    // Optionally, alert the user if the passkey is incorrect
+    alert("Incorrect passkey! Please try again.");
   }
 }
+
+// Add event listener to the submit button
+document.getElementById("submitBtn").addEventListener("click", checkPasskey);

@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flower Bloom</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Blooming Flower</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="flower-container">
-    <div class="flower">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
+  <div class="container">
+    <h1>Enter Passkey to Bloom the Flower</h1>
+    <input type="password" id="passkey" placeholder="Enter passkey">
+    <button id="submitBtn">Submit</button> <!-- Added id for JS interaction -->
+
+    <div class="flower-container" id="flower-container">
+      <div class="flower" id="flower">
+        <!-- Petals -->
+        <div class="petal" id="petal1"></div>
+        <div class="petal" id="petal2"></div>
+        <div class="petal" id="petal3"></div>
+        <div class="petal" id="petal4"></div>
+        <div class="petal" id="petal5"></div>
+        <div class="petal" id="petal6"></div>
+        <div class="petal" id="petal7"></div>
+        <div class="petal" id="petal8"></div>
+      </div>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
