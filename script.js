@@ -7,10 +7,17 @@ function checkPasskey() {
 
   // Check if the passkey matches
   if (userPasskey === correctPasskey) {
-    // Show the flower and apply the blooming effect
-    document.getElementById('flower-container').style.display = 'block';
-    document.getElementById('flower').classList.add('bloom');
-  } else {
-    alert("Incorrect passkey. Try again.");
+// Get the button and flower container elements
+const bloomButton = document.getElementById("bloomBtn");
+const flower = document.querySelector(".flower");
+
+// Function to trigger the blooming effect
+function bloomFlower() {
+  // Add the class 'bloom' to the flower to trigger CSS animation
+  flower.classList.add("bloom");
+}
+
+// Event listener to trigger the blooming on button click
+bloomButton.addEventListener("click", bloomFlower);
   }
 }
