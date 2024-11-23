@@ -1,66 +1,66 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Center the content */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f0f8ff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
-/* Container for the passkey input and flower */
-.container {
-  text-align: center;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Style for the flower container */
 .flower-container {
-  display: none;
-  margin-top: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Flower styling */
 .flower {
-  width: 0;
-  height: 0;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+}
+
+.petal {
+  position: absolute;
+  width: 50px;
+  height: 100px;
   background-color: pink;
   border-radius: 50%;
-  transition: all 1s ease-in-out;
-  position: relative;
+  opacity: 0;
+  animation: bloom 2s forwards;
+}
+
+.petal1 {
   top: 0;
   left: 50%;
-  margin-left: -25px; /* To center the flower */
-  opacity: 0;
+  transform: translateX(-50%) rotate(0deg);
 }
 
-/* Blooming effect using keyframes */
+.petal2 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.petal3 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.petal4 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(270deg);
+}
+
 @keyframes bloom {
   0% {
-    width: 0;
-    height: 0;
+    transform: scale(0);
     opacity: 0;
-    top: 0;
   }
   100% {
-    width: 100px;
-    height: 100px;
+    transform: scale(1);
     opacity: 1;
-    top: -50px;
   }
-}
-
-.bloom {
-  animation: bloom 2s forwards;
 }
